@@ -1,0 +1,253 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .modal {
+  position: absolute;
+  width: 80%;
+  height: 27rem;
+  padding: 1rem;
+  background-color: white;
+  z-index: 100;
+  display: none;
+}
+
+body .modal__close {
+  font-size: large;
+  font-weight: bolder;
+  border: 2px solid blue;
+  float: right;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+body .modal__title {
+  clear: both;
+  text-align: center;
+}
+
+body .modal__description {
+  padding: 1rem;
+  font-size: 1.4rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+body .modal_show {
+  display: block;
+}
+
+body .menu {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  display: none;
+}
+
+body .menu p {
+  font-size: 4em;
+  text-align: center;
+  -webkit-animation: example 1s infinite;
+  animation: example 1s infinite;
+}
+
+body .menu.show {
+  display: block;
+  color: white;
+}
+
+body .menu .menu-list {
+  width: 100%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1rem;
+}
+
+body .menu .menu-list .menu-item {
+  text-align: center;
+  padding: 1rem;
+  width: 150px;
+  border: 1px solid white;
+  cursor: pointer;
+  -webkit-transition: background-color 2s;
+  transition: background-color 2s;
+}
+
+body .menu .menu-list .menu-item:hover {
+  background-color: blue;
+  font-weight: bold;
+}
+
+body .gameboard {
+  width: 608px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2px;
+}
+
+@media screen and (max-width: 610px) {
+  body .gameboard {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.card-container {
+  height: 150px;
+  width: 150px;
+  margin-top: 10px;
+  background-image: url("https://www.pngall.com/wp-content/uploads/2/Question-Mark-PNG-Picture.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+}
+
+.card-container .card-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.card-container .card-img.show-img {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-container .card-img.close-img {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card-container.disabled {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 436px) {
+  .card-container {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@-webkit-keyframes example {
+  0% {
+    color: lime;
+    text-shadow: 0 0 20px green;
+  }
+  25% {
+    color: green;
+    text-shadow: 2px 2px 2px lime;
+    -webkit-transform: translate(-2px, 1px);
+            transform: translate(-2px, 1px);
+  }
+  40% {
+    color: lime;
+    text-shadow: none;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    color: green;
+    text-shadow: 5px 5px 2px blue, -5px -5px 2px red;
+    -webkit-transform: translate(0px, 5px);
+            transform: translate(0px, 5px);
+  }
+  70% {
+    color: lime;
+    text-shadow: none;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  80% {
+    color: lime;
+    text-shadow: 0 0 20px green;
+    -webkit-transform: translate(-2px, 1px);
+            transform: translate(-2px, 1px);
+  }
+  100% {
+    color: lime;
+    text-shadow: none;
+  }
+}
+
+@keyframes example {
+  0% {
+    color: lime;
+    text-shadow: 0 0 20px green;
+  }
+  25% {
+    color: green;
+    text-shadow: 2px 2px 2px lime;
+    -webkit-transform: translate(-2px, 1px);
+            transform: translate(-2px, 1px);
+  }
+  40% {
+    color: lime;
+    text-shadow: none;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  50% {
+    color: green;
+    text-shadow: 5px 5px 2px blue, -5px -5px 2px red;
+    -webkit-transform: translate(0px, 5px);
+            transform: translate(0px, 5px);
+  }
+  70% {
+    color: lime;
+    text-shadow: none;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  80% {
+    color: lime;
+    text-shadow: 0 0 20px green;
+    -webkit-transform: translate(-2px, 1px);
+            transform: translate(-2px, 1px);
+  }
+  100% {
+    color: lime;
+    text-shadow: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */
